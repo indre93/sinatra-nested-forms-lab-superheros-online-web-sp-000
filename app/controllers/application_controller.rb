@@ -2,9 +2,10 @@ require 'sinatra/base'
 
 class App < Sinatra::Base
 
+    set :views, Proc.new { File.join(root, "../views/") }
 
     get '/' do
-      erb :'../views/super_hero'
+      erb :super_hero
     end
 
     post '/teams' do
@@ -18,7 +19,7 @@ class App < Sinatra::Base
       @power = Member.all.map {|hero| hero.power}
       @bio = Member.all.map {|hero| hero.bio}
 
-      erb :'../views/team'
+      erb :team
     end
 
 end
