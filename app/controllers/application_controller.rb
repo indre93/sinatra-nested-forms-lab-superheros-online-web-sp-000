@@ -19,7 +19,7 @@ class App < Sinatra::Base
       @power = Member.all.map {|hero| hero.power}
       @bio = Member.all.map {|hero| hero.bio}
 
-      erb :team
+      erb :'views/team'
     end
 
 end
