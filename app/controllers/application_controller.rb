@@ -17,7 +17,7 @@ class App < Sinatra::Base
 
       @name = Member.all.map {|hero| hero.name}
       @power = Member.all.map {|hero| hero.power}
-      @bio = Member.all.map {|hero| hero.bio}
+      @bio = Member.all.map {|hero| hero.biography}
 
       erb :team
     end
